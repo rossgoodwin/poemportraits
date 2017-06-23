@@ -113,7 +113,7 @@ socket.on('img_url', function(data){
 
 	$('#btn-cancel').click(function(){
 		$.post('http://54.149.122.114:5000/confirm', {
-				'confirmed': false,
+				'confirmed': 0,
 				'url': imgUrl
 			});
 		addForm();
@@ -122,7 +122,7 @@ socket.on('img_url', function(data){
 	$('#btn-continue').click(function(){
 
 		$.post('http://54.149.122.114:5000/confirm', {
-				'confirmed': true,
+				'confirmed': 1,
 				'url': imgUrl
 			});
 
