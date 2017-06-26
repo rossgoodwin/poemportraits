@@ -1,4 +1,4 @@
-$(function(){
+(function(){
 
 
 var badWords;
@@ -11,14 +11,18 @@ $.getJSON("js/badwords.json", function(data){
 
 function addForm() {
 	$("#inner-container").html(
-        '<h2>Welcome.</h2>'
-      + '<p id="help-text">To generate your POEMPORTRAIT, please contribute a word.</p>'
+        '<h2>Welcome</h2>'
+      + '<p id="help-text">To generate your <span class="poem-text">POEM</span><strong>PORTRAIT</strong>,<br>please donate a word.</p>'
+      // + '<form action="#">'
       + '<div class="mdl-textfield mdl-js-textfield">'
-      + '<input class="mdl-textfield__input" type="text" id="word-input">'
+      + '<input class="mdl-textfield__input" type="text" id="word-input" />'
       + '<label class="mdl-textfield__label" for="word-input">Your word...</label>'
-      + '</div><br>'
-	  + '<button id="submit-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">SUBMIT</button>'
+	  + '<button id="submit-btn" class="mdl-button mdl-js-button"><i class="material-icons">arrow_forward</i></button></div>'
+	  // + '</form>'
 	);
+
+	componentHandler.upgradeElements($('#inner-container'));
+
 
 	$('#submit-btn').click(function(){
 		var userInput = $('#word-input').val().trim();
@@ -30,7 +34,7 @@ function addForm() {
 			$.post('http://54.149.122.114:5000/sms', { 'word': userInput });
 
 			$('#inner-container').html(
-				'<h3>Preparing to capture POEMPORTRAIT.</h3>'
+				'<h3>Preparing to capture <span class="poem-text">POEM</span><strong>PORTRAIT</strong></h3>'
 			  + '<ol>'
 			  + '<li>Look up at the screen.</li>'
 			  + '<li>Adjust your seat height.</li>'
@@ -41,19 +45,21 @@ function addForm() {
 		}
 	});
 
-	$('#word-input').focus();
+	// $('#word-input').focus();
 }
 
 function emailScreen(imgUrl) {
 	$('#inner-container').html(
-		'<p>Please enter your email address to receive a digital version. This information will not be stored.</p>'
-	  + '<div class="mdl-textfield mdl-js-textfield">'
-      + '<input class="mdl-textfield__input" type="email" id="email-input">'
+		'<h3><span class="poem-text">POEM</span><strong>PORTRAIT</strong> printing</h3>'
+      + '<p>Please enter your email address to receive a digital version. This information will not be stored.</p>'
+	  + '<div id="email-div" class="mdl-textfield mdl-js-textfield">'
+      + '<input class="mdl-textfield__input" type="text" id="email-input" />'
       + '<label class="mdl-textfield__label" for="email-input">Your email...</label>'
-      + '</div><br>'
-      + '<button id="email-submit-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">SUBMIT</button>'
-	  + '<button id="email-cancel-btn" class="mdl-button mdl-js-button mdl-js-ripple-effect">CANCEL</button>'
+      + '<button id="email-submit-btn" class="mdl-button mdl-js-button"><i class="material-icons">arrow_forward</i></button></div>'
+	  + '<button id="email-cancel-btn" class="mdl-button mdl-js-button small-btn">SKIP</button>'
 	);
+
+	componentHandler.upgradeElements($('#inner-container'));
 
 	$('#email-submit-btn').click(function(){
 		userEmail = $('#email-input').val();
@@ -84,8 +90,8 @@ function emailScreen(imgUrl) {
 
 function thankYou() {
 	$('#inner-container').html(
-		'<p>Thank you for taking part.</p>'
-	  + '<p>Your POEMPOTRAIT will be ready for you to collect as you leave.</p>'
+		'<h3>Thank you<br>for taking part.</h3>'
+	  + '<p>Your <span class="poem-text">POEM</span><strong>PORTRAIT</strong> will be ready for you to collect as you leave.</p>'
 	);
 }
 
@@ -104,12 +110,14 @@ socket.on('img_url', function(data){
 	console.log(data);
 	imgUrl = data['url']
 	$('#inner-container').html(
-		'<h3>POEMPORTRAIT captured.</h3>'
+		'<h3><span class="poem-text">POEM</span><strong>PORTRAIT</strong> captured.</h3>'
 	  + '<div class="image-preview"><img src="'+imgUrl+'"></div>'
-	  + '<p>By continuing, you allow this image to appear as part of the artwork. It will not be used for any other purpose.</p>'
-	  + '<button id="btn-continue" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">CONTINUE</button>'
-	  + '<button id="btn-cancel" class="mdl-button mdl-js-button mdl-js-ripple-effect">CANCEL</button>'
+	  + '<button id="btn-continue" class="mdl-button mdl-js-button">Continue <i class="material-icons">arrow_forward</i></button>'
+	  + '<p class="small-text">By continuing, you allow this image to be used by the Serpentine Galleries and appear as part of the artwork.</p>'
+	  + '<button id="btn-cancel" class="mdl-button mdl-js-button small-btn">Cancel</button>'
 	);
+
+	componentHandler.upgradeElements($('#inner-container'));
 
 	$('#btn-cancel').click(function(){
 		$.post('http://54.149.122.114:5000/confirm', {
@@ -130,4 +138,7 @@ socket.on('img_url', function(data){
 	})
 });
 
-});
+
+
+
+})();
