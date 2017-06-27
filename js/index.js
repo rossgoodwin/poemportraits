@@ -50,13 +50,13 @@ function addForm() {
 
 function emailScreen(imgUrl) {
 	$('#inner-container').html(
-		'<h3><span class="poem-text">POEM</span><strong>PORTRAIT</strong> printing</h3>'
+		'<h4><span class="poem-text">POEM</span><strong>PORTRAIT</strong> printing</h4>'
       + '<p>Please enter your email address to receive a digital version. This information will not be stored.</p>'
 	  + '<div id="email-div" class="mdl-textfield mdl-js-textfield">'
       + '<input class="mdl-textfield__input" type="text" id="email-input" />'
       + '<label class="mdl-textfield__label" for="email-input">Your email...</label>'
       + '<button id="email-submit-btn" class="mdl-button mdl-js-button"><i class="material-icons">arrow_forward</i></button></div>'
-	  + '<button id="email-cancel-btn" class="mdl-button mdl-js-button small-btn">SKIP</button>'
+	  + '<br><button id="email-cancel-btn" class="mdl-button mdl-js-button small-btn">SKIP</button>'
 	);
 
 	componentHandler.upgradeElements($('#inner-container'));
