@@ -51,7 +51,7 @@ function addForm() {
 function emailScreen(imgUrl) {
 	$('#inner-container').html(
 		'<h4><span class="poem-text">POEM</span><strong>PORTRAIT</strong> printing</h4>'
-      + '<p>Please enter your email address to receive a digital version. This information will not be stored.</p>'
+      + '<p class="small-text">Please enter your email address to receive a digital version. This information will not be stored.</p>'
 	  + '<div id="email-div" class="mdl-textfield mdl-js-textfield">'
       + '<input class="mdl-textfield__input" type="text" id="email-input" />'
       + '<label class="mdl-textfield__label" for="email-input">Your email...</label>'
