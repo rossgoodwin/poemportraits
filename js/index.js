@@ -15,7 +15,7 @@ function addForm() {
       + '<p id="help-text">To generate your <span class="poem-text">POEM</span><strong>PORTRAIT</strong>,<br>please donate a word.</p>'
       // + '<form action="#">'
       + '<div class="mdl-textfield mdl-js-textfield">'
-      + '<input class="mdl-textfield__input" type="text" id="word-input" />'
+      + '<input class="mdl-textfield__input" type="text" id="word-input" autocapitalize="none" />'
       + '<label class="mdl-textfield__label" for="word-input">Your word...</label>'
 	  + '<button id="submit-btn" class="mdl-button mdl-js-button"><i class="material-icons">arrow_forward</i></button></div>'
 	  // + '</form>'
@@ -53,7 +53,7 @@ function emailScreen(imgUrl) {
 		'<h4><span class="poem-text">POEM</span><strong>PORTRAIT</strong> printing</h4>'
       + '<p>Please enter your email address to receive a digital version. This information will not be stored.</p>'
 	  + '<div id="email-div" class="mdl-textfield mdl-js-textfield">'
-      + '<input class="mdl-textfield__input" type="text" id="email-input" />'
+      + '<input class="mdl-textfield__input" type="email" id="email-input" autocapitalize="none" />'
       + '<label class="mdl-textfield__label" for="email-input">Your email...</label>'
       + '<button id="email-submit-btn" class="mdl-button mdl-js-button"><i class="material-icons">arrow_forward</i></button></div>'
 	  + '<br><button id="email-cancel-btn" class="mdl-button mdl-js-button small-btn">SKIP</button>'
@@ -90,7 +90,7 @@ function emailScreen(imgUrl) {
 
 function thankYou() {
 	$('#inner-container').html(
-		'<h3>Thank you<br>for taking part.</h3>'
+		'<h3>Thank you<br>for taking part</h3>'
 	  + '<p>Your <span class="poem-text">POEM</span><strong>PORTRAIT</strong> will be ready for you to collect as you leave.</p>'
 	);
 }
@@ -110,7 +110,7 @@ socket.on('img_url', function(data){
 	console.log(data);
 	imgUrl = data['url']
 	$('#inner-container').html(
-		'<h3><span class="poem-text">POEM</span><strong>PORTRAIT</strong> captured.</h3>'
+		'<h3><span class="poem-text">POEM</span><strong>PORTRAIT</strong> captured</h3>'
 	  + '<div class="image-preview"><img src="'+imgUrl+'"></div>'
 	  + '<button id="btn-continue" class="mdl-button mdl-js-button">Continue <i class="material-icons">arrow_forward</i></button>'
 	  + '<p class="small-text">By continuing, you allow this image to be used by the Serpentine Galleries and appear as part of the artwork.</p>'
