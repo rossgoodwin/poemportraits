@@ -41,8 +41,15 @@ function addForm() {
 			  + '<li>Adjust your seat height.</li>'
 			  + '<li>Pose for photo.</li>'
 			  + '</ol>'
-
+			  + '<button id="ready-btn" class="mdl-button mdl-js-button">Ready <i class="material-icons">arrow_forward</i></button>'
 			);
+
+			$('#ready-btn').click(function(){
+				$('#inner-container').html(
+				  '<h3>Look up<br>and pose</h3>'
+				+ '<p>Your <span class="poem-text">POEM</span><strong>PORTRAIT</strong><br>will be captured shortly.</p>'
+				);
+			});
 		}
 	});
 
