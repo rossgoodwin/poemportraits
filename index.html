@@ -34,6 +34,8 @@ button#submit-btn, button#email-submit-btn {
 
 p {
   font-size: 18px;
+  /*max-width: 200px;*/
+  /*padding: 0 15px;*/
 }
 
 span.poem-text {
@@ -43,9 +45,22 @@ span.poem-text {
 }
 
 #inner-container {
-	width: 90%;
-	margin: 25px auto;
+  position: absolute;
+	width: 100%;
+  /*height: 90%;*/
+	/*margin: 0 auto;*/
+  top: 150px;
+  left: 0;
+  right: 0;
 	text-align: center;
+}
+
+#outer-container {
+  width: 90%;
+  height: 500px;
+  margin: 50px auto 0 auto;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
 }
 
 div.image-preview {
@@ -69,6 +84,7 @@ ol {
 }
 
 footer {
+  position: relative;
   font-family: "Roboto";
   text-align: center;
 }
@@ -111,13 +127,13 @@ hr {
     <!-- <hr> -->
 
     <main class="mdl-layout__content">
-  	
+  	 <div id="outer-container">
     	<div id="inner-container"></div>
-
+     </div>
     </main>
 
     <footer>
-      <hr>
+      <!-- <hr> -->
 
       <p>
       <img src="./assets/g.png">

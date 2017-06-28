@@ -10,6 +10,7 @@ $.getJSON("js/badwords.json", function(data){
 
 
 function addForm() {
+	$("#inner-container").css("top", "150px");
 	$("#inner-container").html(
         '<h2>Welcome</h2>'
       + '<p id="help-text">To generate your <span class="poem-text">POEM</span><strong>PORTRAIT</strong>,<br>please donate a word.</p>'
@@ -32,7 +33,7 @@ function addForm() {
 		}
 		else if (userInput) {
 			$.post('http://54.149.122.114:5000/sms', { 'word': userInput });
-
+			$("#inner-container").css("top", "150px");
 			$('#inner-container').html(
 				'<h3>Preparing to capture <span class="poem-text">POEM</span><strong>PORTRAIT</strong></h3>'
 			  + '<ol>'
@@ -49,9 +50,12 @@ function addForm() {
 }
 
 function emailScreen(imgUrl) {
+	$("#inner-container").css("top", "150px");
 	$('#inner-container').html(
-		'<h4><span class="poem-text">POEM</span><strong>PORTRAIT</strong> printing</h4>'
-      + '<p>Please enter your email address to receive a digital version. This information will not be stored.</p>'
+		'<h3><span class="poem-text">POEM</span><strong>PORTRAIT</strong> printing</h3>'
+      + '<p>Please enter your email address<br>'
+      +    'to receive a digital version. This<br>'
+      +    'information will not be stored.</p>'
 	  + '<div id="email-div" class="mdl-textfield mdl-js-textfield">'
       + '<input class="mdl-textfield__input" type="email" id="email-input" autocapitalize="none" />'
       + '<label class="mdl-textfield__label" for="email-input">Your email...</label>'
@@ -89,9 +93,10 @@ function emailScreen(imgUrl) {
 
 
 function thankYou() {
+	$("#inner-container").css("top", "150px");
 	$('#inner-container').html(
 		'<h3>Thank you<br>for taking part</h3>'
-	  + '<p>Your <span class="poem-text">POEM</span><strong>PORTRAIT</strong> will be ready for you to collect as you leave.</p>'
+	  + '<p>Your <span class="poem-text">POEM</span><strong>PORTRAIT</strong> will be ready<br>for you to collect as you leave.</p>'
 	);
 }
 
@@ -109,6 +114,7 @@ var socket = io('http://54.149.122.114:5000/img_url');
 socket.on('img_url', function(data){
 	console.log(data);
 	imgUrl = data['url']
+	$("#inner-container").css("top", "55px");
 	$('#inner-container').html(
 		'<h3><span class="poem-text">POEM</span><strong>PORTRAIT</strong> captured</h3>'
 	  + '<div class="image-preview"><img src="'+imgUrl+'"></div>'
