@@ -119,7 +119,7 @@ socket.on('img_url', function(data){
 		'<h3><span class="poem-text">POEM</span><strong>PORTRAIT</strong> captured</h3>'
 	  + '<div class="image-preview"><img src="'+imgUrl+'"></div>'
 	  + '<button id="btn-continue" class="mdl-button mdl-js-button">Continue <i class="material-icons">arrow_forward</i></button>'
-	  + '<p class="small-text">By continuing, you allow this image to be used by the Serpentine Galleries and appear as part of the artwork.</p>'
+	  + '<p class="small-text">By continuing, you allow this image to be used by the<br>Serpentine Galleries and appear as part of the artwork.</p>'
 	  + '<button id="btn-cancel" class="mdl-button mdl-js-button small-btn">Cancel</button>'
 	);
 
