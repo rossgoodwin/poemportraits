@@ -1,6 +1,6 @@
 (function(){
 
-var serverIp = "";
+var serverIp = "54.200.200.70";
 
 
 var badWords;
