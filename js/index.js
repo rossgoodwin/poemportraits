@@ -34,7 +34,8 @@ function addForm() {
 			$('#help-text').text('Word not accepted, please try again.');
 		}
 		else if (userInput) {
-			$.post('http://'+serverIp+':5000/sms', { 'word': userInput });
+			// $.post('http://'+serverIp+':5000/sms', { 'word': userInput });
+			$.get('http://'+serverIp+':5000/word/'+userInput);
 			$("#inner-container").css("top", "150px");
 			$('#inner-container').html(
 				'<h3>Preparing to capture <span class="poem-text">POEM</span><strong>PORTRAIT</strong></h3>'
@@ -47,6 +48,7 @@ function addForm() {
 			);
 
 			$('#ready-btn').click(function(){
+				$.post('http://'+serverIp+':5000/sms', { 'word': userInput });
 				$('#inner-container').html(
 				  '<h3>Look up<br>and pose</h3>'
 				+ '<p>Your <span class="poem-text">POEM</span><strong>PORTRAIT</strong><br>will be captured shortly.</p>'
