@@ -63,8 +63,8 @@ function emailScreen(imgUrl) {
 	$('#inner-container').html(
 		'<h3><span class="poem-text">POEM</span><strong>PORTRAIT</strong> printing</h3>'
       + '<p>Please enter your email address to<br>'
-      +    'receive digital versions of your own<br>'
-      +    'and the final collective image.<br><br>'
+      +    'receive a digital version of your Portrait<br>'
+      +    'and the final collective PoemPortrait.<br><br>'
       +    'The information will not be stored<br>'
       +    'or used post event.</p>'
 	  + '<div id="email-div" class="mdl-textfield mdl-js-textfield">'
@@ -130,7 +130,7 @@ socket.on('img_url', function(data){
 		'<h3><span class="poem-text">POEM</span><strong>PORTRAIT</strong> captured</h3>'
 	  + '<div class="image-preview"><img src="'+imgUrl+'"></div>'
 	  + '<button id="btn-continue" class="mdl-button mdl-js-button">Continue <i class="material-icons">arrow_forward</i></button>'
-	  + '<p class="small-text">By continuing, you allow this image to be used by Google Arts and Culture, understanding that it will appear as part of a collective artwork in post event communications.</p>'
+	  + '<p class="small-text">By continuing, you allow this image to be used by Google Arts and Culture and Zeitgeist, understanding that it will appear as part of a collective artwork in post event communications.</p>'
 	  + '<button id="btn-cancel" class="mdl-button mdl-js-button small-btn">Cancel</button>'
 	);
 
