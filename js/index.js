@@ -61,14 +61,14 @@ function addForm() {
 }
 
 function emailScreen(imgUrl) {
-	$("#inner-container").css("top", "150px");
+	$("#inner-container").css("top", "100px");
 	$('#inner-container').html(
 		'<h3><span class="poem-text">POEM</span><strong>PORTRAIT</strong> printing</h3>'
-      + '<p><small>Please enter your email address to<br>'
+      + '<p>Please enter your email address to<br>'
       +    'receive a digital version of your Portrait<br>'
       +    'and the final collective PoemPortrait.<br><br>'
       +    'The information will not be stored<br>'
-      +    'or used post event.</small></p>'
+      +    'or used post event.</p>'
 	  + '<div id="email-div" class="mdl-textfield mdl-js-textfield">'
       + '<input class="mdl-textfield__input" type="email" id="email-input" autocapitalize="none" />'
       + '<label class="mdl-textfield__label" for="email-input">Your email...</label>'
