@@ -61,7 +61,7 @@ function addForm() {
 }
 
 function emailScreen(imgUrl) {
-	$("#inner-container").css("top", "100px");
+	$("#inner-container").css("top", "85px");
 	$('#inner-container').html(
 		'<h3><span class="poem-text">POEM</span><strong>PORTRAIT</strong> printing</h3>'
       + '<p>Please enter your email address to<br>'
