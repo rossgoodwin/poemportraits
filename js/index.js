@@ -35,7 +35,7 @@ function addForm() {
 		}
 		else if (userInput) {
 			// $.post('http://'+serverIp+':5000/sms', { 'word': userInput });
-			$.get('http://'+serverIp+':5000/word/'+userInput);
+			$.get('http://'+serverIp+'/word/'+userInput);
 			$("#inner-container").css("top", "150px");
 			$('#inner-container').html(
 				'<h3>Preparing to capture <span class="poem-text">POEM</span><strong>PORTRAIT</strong></h3>'
@@ -48,7 +48,7 @@ function addForm() {
 			);
 
 			$('#ready-btn').click(function(){
-				$.post('http://'+serverIp+':5000/sms', { 'word': userInput });
+				$.post('http://'+serverIp+'/sms', { 'word': userInput });
 				$('#inner-container').html(
 				  '<h3>Look up<br>and pose</h3>'
 				+ '<p>Your <span class="poem-text">POEM</span><strong>PORTRAIT</strong><br>will be captured shortly.</p>'
@@ -82,7 +82,7 @@ function emailScreen(imgUrl) {
 		userEmail = $('#email-input').val();
 
 		if (userEmail) {
-			$.post('http://'+serverIp+':5000/email', {
+			$.post('http://'+serverIp+'/email', {
 				'url': imgUrl,
 				'email': userEmail	
 			});
@@ -121,7 +121,7 @@ addForm();
 
 
 
-var socket = io('http://'+serverIp+':5000/img_url');
+var socket = io('http://'+serverIp+'/img_url');
 // var nsp = io.of('/img_url');
 
 socket.on('img_url', function(data){
@@ -139,7 +139,7 @@ socket.on('img_url', function(data){
 	componentHandler.upgradeElements($('#inner-container'));
 
 	$('#btn-cancel').click(function(){
-		$.post('http://'+serverIp+':5000/confirm', {
+		$.post('http://'+serverIp+'/confirm', {
 				'confirmed': 0,
 				'url': imgUrl
 			});
@@ -148,7 +148,7 @@ socket.on('img_url', function(data){
 
 	$('#btn-continue').click(function(){
 
-		$.post('http://'+serverIp+':5000/confirm', {
+		$.post('http://'+serverIp+'/confirm', {
 				'confirmed': 1,
 				'url': imgUrl
 			});
