@@ -1,6 +1,6 @@
 (function(){
 
-var serverIp = "54.191.216.93";
+var serverIp = "poemportraits.haunted.computer";
 
 
 var badWords;
