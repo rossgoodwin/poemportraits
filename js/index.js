@@ -63,7 +63,7 @@ function addForm() {
 function emailScreen(imgUrl) {
 	$("#inner-container").css("top", "85px");
 	$('#inner-container').html(
-		'<h3><span class="poem-text">POEM</span><strong>PORTRAIT</strong> printing</h3>'
+		'<h3><span class="poem-text">POEM</span><strong>PORTRAIT</strong></h3>'
       + '<p>Please enter your email address to<br>'
       +    'receive a digital version of your Portrait<br>'
       +    'and the final collective PoemPortrait.<br><br>'
@@ -109,7 +109,7 @@ function thankYou() {
 	$("#inner-container").css("top", "150px");
 	$('#inner-container').html(
 		'<h3>Thank you<br>for taking part</h3>'
-	  + '<p>Your <span class="poem-text">POEM</span><strong>PORTRAIT</strong> will be ready<br>for you to collect as you leave.</p>'
+	  + '<p>Your <span class="poem-text">POEM</span><strong>PORTRAIT</strong> will be emailedbr>to you shortly.</p>'
 	);
 }
 
@@ -132,7 +132,7 @@ socket.on('img_url', function(data){
 		'<h3><span class="poem-text">POEM</span><strong>PORTRAIT</strong> captured</h3>'
 	  + '<div class="image-preview"><img src="'+imgUrl+'"></div>'
 	  + '<button id="btn-continue" class="mdl-button mdl-js-button">Continue <i class="material-icons">arrow_forward</i></button>'
-	  + '<p class="small-text">By continuing, you allow this image to be used by Google Arts and Culture and Zeitgeist, understanding that it will appear as part of a collective artwork in post event communications.</p>'
+	  + '<p class="small-text">By continuing you allow the image to be used by the Google Lab to appear as part of our combined artwork.</p>'
 	  + '<button id="btn-cancel" class="mdl-button mdl-js-button small-btn">Cancel</button>'
 	);
 
