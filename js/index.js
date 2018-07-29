@@ -109,7 +109,7 @@ function thankYou() {
 	$("#inner-container").css("top", "150px");
 	$('#inner-container').html(
 		'<h3>Thank you<br>for taking part</h3>'
-	  + '<p>Your <span class="poem-text">POEM</span><strong>PORTRAIT</strong> will be emailedbr>to you shortly.</p>'
+	  + '<p>Your <span class="poem-text">POEM</span><strong>PORTRAIT</strong> will be emailed<br>to you shortly.</p>'
 	);
 }
 
